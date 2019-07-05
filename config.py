@@ -4,6 +4,7 @@ class Config:
     '''
     General configuration parent class
     '''
+    QUOTES_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
     pass
 
 class ProdConfig(Config):
