@@ -1,10 +1,10 @@
 
 
-class Quotes:
+class Blog:
     """
-    Quotes class to define Quotes objects
+    Blog class to define Blog objects
     """
-    def __init__(self,author,id,quote):
+    def __init__(self,author,id,blog):
         self.author = author
         self.id = id
-        self.quote = quote
+        self.blog = blog
