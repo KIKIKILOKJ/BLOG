@@ -1,6 +1,6 @@
 
 
-class Blog:
+class Blogs:
     """
     Blog class to define Blog objects
     """

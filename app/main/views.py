@@ -1,6 +1,7 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
-from ..forms import BlogForm
+from .forms import BlogForm
+from ..models import Blogs
 # Comment = comment.Comment
 # from . import get_quotes
 
@@ -20,12 +21,8 @@ def index():
 
     return render_template('index.html', title = title) #random = random_quotes 
 
-@main.route('/blog/new/<int:id>',methods = ['GET','POST'])
-def comments(id):
-    form = BlogForm()
-    
-    if form.validate_on_submit():
-        name = form.name.data
-        blog = Blog(name = name)
-        # new_blog = Blog('')
+@main.route('/blog/<int:id>',methods = ['GET','POST'])
+def blogs(id):
+        blogs = Blogs.query.get(id)
         
+        return render_template('blog.html', blogs=blogs)
