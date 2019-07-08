@@ -41,14 +41,6 @@ def blog_id(id):
     blogcomment = BlogComment.query.filter_by(blog_id=id).all()
     return render_template('blogies.html',blogform=form, blogcomments = blogcomment, blog=blog)
 
-# @main.route('/blogies')
-# @login_required
-# def allblogs():
-#     title = 'all blogpiches'
-#     blogs = Blog.query.order_by(Blog.id).all()
-#     return render_template("bio.html", title=title, blogs=blogs )
-
-
 @main.route('/user/<uname>')
 @login_required
 def profile(uname):
@@ -79,13 +71,3 @@ def update_profile(uname):
 
     return render_template('profile/update.html',form =form)
 
-@main.route('/user/<uname>/update/pic',methods= ['POST'])
-@login_required
-def update_pic(uname):
-    user = User.query.filter_by(username = uname).first()
-    if 'photo' in request.files:
-        filename = photos.save(request.files['photo'])
-        path = f'photos/{filename}'
-        user.profile_pic_path = path
-        db.session.commit()
-    return redirect(url_for('main.profile',uname=uname))
