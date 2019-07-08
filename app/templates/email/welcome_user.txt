@@ -1,0 +1,4 @@
+Hello {{user.username}}
+Welcome to The Blog Application!!
+We have just seen you have signed up for our application and want to welcome you to our platform where you can publish your own blogs and people will comment on them
+for more information please contact me via (petermax2004@gmail.com)

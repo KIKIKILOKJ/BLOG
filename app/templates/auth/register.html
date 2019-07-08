@@ -1,6 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
+
 <style>
 body, html {
     height: 100%;
@@ -10,8 +12,9 @@ body, html {
     box-sizing: border-box;
 }
 .bg-img {
-   
+
 }
+/* Add styles to the form container */
 .container {
     position: absolute;
     right: 0;
@@ -47,23 +50,25 @@ input[type=text]:focus, input[type=password]:focus {
 }
 </style>
 </head>
+<body>
 
 
-<div classs='container-fluid'>
 <div class="bg-img">
   <div class="row">
   <div class="col-md-2"> </div>
         <div class="col-md-8">
-      <h1>write a blog</h1>
-            {{wtf.quick_form(blogsform)}}
-          </div>
-{{simplemde.load}}
+        <!-- Login form -->
+        {{wtf.quick_form(registration_form)}}
+       </div>
        <div class="col-md-2"> </div>
+      </div>
 
 
-</div>
-</div>
-</div>
+
+
+</body>
+</html>
+
 
 
 {% endblock %}

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
 <style>
 body, html {
@@ -10,7 +11,7 @@ body, html {
     box-sizing: border-box;
 }
 .bg-img {
-   
+    
 }
 .container {
     position: absolute;
@@ -52,15 +53,23 @@ input[type=text]:focus, input[type=password]:focus {
 <div classs='container-fluid'>
 <div class="bg-img">
   <div class="row">
+
   <div class="col-md-2"> </div>
+
         <div class="col-md-8">
-      <h1>write a blog</h1>
-            {{wtf.quick_form(blogsform)}}
-          </div>
+<a href="/blog" >Write a Blog</a></br>
+            <h1>All the blogs posted</h1>
+  {% for blog in blogs %}
+<blockquote>
+{{blog.blog}}
+</blockquote>
+<a href="/blog/{{blog.id}}"><span class="glyphicon glyphicon-comment"></span></a>
+<h1>{{blog.user.username}}</h1>
+  {% endfor %}
 {{simplemde.load}}
+      </div>
+
        <div class="col-md-2"> </div>
-
-
 </div>
 </div>
 </div>
