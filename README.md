@@ -1,96 +1,51 @@
-# Flask template
-#### i am a flask template
+# Blog Application 
+
+#### By Peter Kinyanjui
 
 ## Description
-I am a template to be used to develop flask application ready for production. 
+    This web application is built using Python framework known as Flask. The app displays blogs that have been posted and  by the users and other users can login and  leave a comment.
 
-#### Link to deployed site
-....
+## Setup/Installation Requirements
+First clone the repo
+   ```$ git clone https://github.com/raymondyegon/blog-flask.git ```
 
-## Table of content
-1. [Description](#description)
-2. [Setup and installations](#setup-and-installations)
-3. [Contributing](#contributing)
-4. [Bugs](#bugs)
-5. [Contact me](#support-and-contact-details)
-6. [Licensing](#license)
+After cloning, navigate to the project:
+   `` $ cd blog-flask``
 
+Create the virtual enviroment
+    ``$ python3.6 -m venv --without-pip virtual``
 
-## Setup and installations
+    ``$ source virtual/bin/env``
 
-#### Prerequisites
-1. [Python3.6](https://www.python.org/downloads/)
-)
-2. [virtualenv](https://virtualenv.pypa.io/en/stable/installation/)
-3. [Pip](https://pip.pypa.io/en/stable/installing/)
-
-#### Technologies used
-    - Python 3.6
-    - HTML
-    - Bootstrap 4
-    - Heroku
-    - Postgresql
-    - Flask
-
-#### Clone the Repo and rename it to suit your needs.
-```bash
-git clone git@github.com:newtonkiragu/flask-template.git
-```
-#### Initialize git and add the remote repository
-```bash
-git init
-```
-```bash
-git remote add origin <your-repository-url>
-```
-
-#### Create and activate the virtual environment
-```bash
-python3.6 -m virtualenv virtual
-```
-
-```bash
-source virtual/bin/activate
-```
-
-#### Setting up environment variables
-Create a `.env` file and paste paste the following filling where appropriate:
-```
-SECRET_KEY='<Secret_key>'
-DEBUG=True
-```
-
-#### Install dependancies
-Install dependancies that will create an environment for the app to run
-`pip install -r requirements.txt`
-
-#### Make and run migrations
-```bash
-python3.6 manage.py makemigrations && python3.6 manage.py migrate
-```
-
-#### Run the app
-```bash
-python3.6 manage.py runserver
-```
-Open [localhost:5000](http://127.0.0.1:5000/)
+    ``$ curl https://bootstrap.pypa.io/get-pip.py | python``
 
 
-## Contributing
-Please read this [comprehensive guide](https://opensource.guide/how-to-contribute/) on how to contribute. Pull requests are welcome :-)
+Then install all the requirements through pip:
+   ```$ pip install -r requirements.txt ```
 
-## Bugs
-Create an issue mentioning the bug you have found
+Make the file executable:
+   ```$ chmod +x start.sh```
 
-#### Known bugs
- - N/A
+Run the application:
+   ```$ ./start.sh ```
 
+Now navigate to your browser at: ```localhost:5000```
 
+## Technologies Used
+* Python
+* Jquery
+* Flask
+* HTML5
+* Bootstrap
 
-## Support and contact details
-Contact [Newton Karanu](karanunewton4@gmail.com) for further help/support
+## BDD
+|BEHAVIOUR|INPUT|OUTPUT|
+|--------:|-----:|-----:|
+|Registration|Sumbmit Registration form|User creates account|
+|Subscription|Submit subscription form|User is notified when there is a post|
+|Comment on Blog|Access the comment form|Comment for a blog is viewed|
 
-### License
-MIT
+# Contact info
+Incase of any challenges or questions, feel free to reach outh via email(petermax2004@gmail.com)
 
-Copyright (c)2018 **Newton Karanu**
+## Lisence
