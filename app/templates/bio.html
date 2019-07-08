@@ -5,7 +5,7 @@
 <style>
 body, html {
     height: 50%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
 }
 * {
     box-sizing: border-box;
@@ -45,20 +45,20 @@ body, html {
   <div class="col-md-2"> </div>
 
         <div class="col-md-8">
-<a href="/blog" >Write a Blog</a></br>
-            <h1>All the blogs posted</h1>
-  {% for blog in blogs %}
-<blockquote>
-{{blog.blog}}
-</blockquote>
-<a href="/blog/{{blog.id}}"><span class="glyphicon glyphicon-comment"></span></a>
-<h1>{{blog.user.username}}</h1>
-  {% endfor %}
-{{simplemde.load}}
-      </div>
+            <a href="/blog" >Write a Blog</a></br>
+                <h1>All the blogs posted</h1>
+                {% for blog in blogs %}
+                <blockquote>
+                {{blog.blog}}
+                </blockquote>
+            <a href="/blog/{{blog.id}}"><span class="glyphicon glyphicon-comment"></span></a>
+                <h1>{{blog.user.username}}</h1>
+                {% endfor %}
+                {{simplemde.load}}
+        </div>
 
-       <div class="col-md-2"> </div>
-</div>
+        <div class="col-md-4"> </div>
+    </div>
 </div>
 </div>
 
