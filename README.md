@@ -49,4 +49,4 @@ Now navigate to your browser at: ```localhost:5000```
 Incase of any challenges or questions, feel free to reach outh via email(petermax2004@gmail.com)
 
 ## Lisence
-mit [LICENSE]
+[mit] (LICENSE)
