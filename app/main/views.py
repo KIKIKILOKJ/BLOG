@@ -22,7 +22,7 @@ def blog():
 
         db.session.add(new_blog)
         db.session.commit()
-        return redirect(url_for('.allblogs'))
+        return redirect(url_for('main.blog'))
 
     return render_template("blog.html", title = title, blogsform= form)
 
@@ -81,3 +81,10 @@ def update_pic(uname):
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
+
+@main.route('/blogies')
+@login_required
+def allblogs():
+    title = 'all blogpiches'
+    blogs = Blog.query.order_by(Blog.id).all()
+    return render_template("bio.html", title=title, blogs=blogs )
