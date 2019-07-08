@@ -82,9 +82,16 @@ def update_pic(uname):
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
 
-@main.route('/new/blog_view')
+@main.route('/new/blog/<int:id>',  methods=['GET', 'POST'])
 @login_required
-def allblogs():
-    title = 'BLOGS'
-    blogs = Blog.query.order_by(Blog.id).all()
-    return render_template("blog_view.html", title=title, blogs=blogs )
+def new_blog(id):
+
+    blog = Blog.query.get(id)
+    form = BlogCommentForm()
+    if form.validate_on_submit():
+        blogcomment = form.blogcomment.data
+        new_blogcomment = BlogComment(blogcomment=blogcomment, blog_id=id, user=current_user)
+        new_blogcomment.save_blogcomment()
+
+    blogcomment = BlogComment.query.filter_by(blog_id=id).all()
+    return render_template('blog_view.html',blogform=form, blogcomments = blogcomment, blog=blog)
