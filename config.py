@@ -6,6 +6,16 @@ class Config:
     '''
     QUOTES_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
     
+    # simple mde  configurations
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
+
+    
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://peter:abcdef@localhost/blogs'
+    DEBUG = True
+    
+    
     #email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
