@@ -82,9 +82,9 @@ def update_pic(uname):
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
 
-@main.route('/blogies')
+@main.route('/new/blog_view')
 @login_required
 def allblogs():
-    title = 'all blogpiches'
+    title = 'BLOGS'
     blogs = Blog.query.order_by(Blog.id).all()
-    return render_template("bio.html", title=title, blogs=blogs )
+    return render_template("blog_view.html", title=title, blogs=blogs )
