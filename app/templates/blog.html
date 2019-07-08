@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% import "bootstrap/wtf.html" as wtf %}
 {% block content %}
 <style>
 body, html {
@@ -55,8 +55,8 @@ input[type=text]:focus, input[type=password]:focus {
   <div class="col-md-2"> </div>
         <div class="col-md-8">
       <h1>write a blog</h1>
-            {{wtf.quick_form(blogsform)}}
-          </div>
+            {{wtf.quick_form(blogs_form)}}
+        </div>
 {{simplemde.load}}
        <div class="col-md-2"> </div>
 
