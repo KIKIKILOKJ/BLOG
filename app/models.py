@@ -58,3 +58,5 @@ class BlogComment(db.Model):
     def save_blogcomment(self):
         db.session.add(self)
         db.session.commit()
+        
+        
